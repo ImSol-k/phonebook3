@@ -1,11 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ page import="java.util.List"%>
 <%@ page import="com.javaex.vo.PersonVo"%>
 
-<%
-List<PersonVo> personList = (List<PersonVo>) request.getAttribute("personList");
-%>
+<% List<PersonVo> personList = (List<PersonVo>) request.getAttribute("personList"); %>
 
 
 <!DOCTYPE html>
@@ -22,6 +21,33 @@ List<PersonVo> personList = (List<PersonVo>) request.getAttribute("personList");
 	<h2>리스트</h2>
 
 	<p>등록된 전화번호 리스트입니다</p>
+
+	<c:forEach items="${requestScope.personList }" var="person">
+		<table border="1px">
+			<tr>
+				<td colspan="2"><b>[${person.no}]</b></td>
+			</tr>
+			<tr>
+				<td><b>이름</b></td>
+				<td>${person.name }</td>
+			</tr>
+			<tr>
+				<td><b>전화번호</b></td>
+				<td>${person.ph }</td>
+			</tr>
+			<tr>
+				<td><b>회사</b></td>
+				<td>${person.company }</td>
+			</tr>
+			<tr>
+				<td><a href="/phonebook3/pbc?action=delete&no=${person.id }">[삭제]</a></td>
+				<td><a
+					href="/phonebook3/pbc?action=pupdate&no=${person.no }&name=${person.name } &ph=${person.ph }&company=${person.company }">[수정]</a></td>
+			</tr>
+		</table>
+	</c:forEach>
+
+	<!--  
 	<%
 	for (int i = 0; i < personList.size(); i++) {
 	%>
@@ -50,10 +76,8 @@ List<PersonVo> personList = (List<PersonVo>) request.getAttribute("personList");
 		</tr>
 	</table>
 
-
-	<%
-	}
+}}
 	%>
-
+-->
 </body>
 </html>
