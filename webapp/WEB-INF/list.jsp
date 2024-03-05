@@ -47,37 +47,6 @@
 		</table>
 	</c:forEach>
 
-	<!--  
-	<%
-	for (int i = 0; i < personList.size(); i++) {
-	%>
-
-	<table border="1px">
-		<tr>
-			<td colspan="2"><b>[<%=personList.get(i).getPersonId() %>]</b></td>
-		</tr>
-		<tr>
-			<td><b>이름</b></td>
-			<td><%=personList.get(i).getName()%></td>
-		</tr>
-		<tr>
-			<td><b>전화번호</b></td>
-			<td><%=personList.get(i).getPh()%></td>
-		</tr>
-		<tr>
-			<td><b>회사</b></td>
-			<td><%=personList.get(i).getCompany()%></td>
-		</tr>
-		<tr>
-			<td><a
-				href="/phonebook3/pbc?action=delete&no=<%=personList.get(i).getPersonId()%>">[삭제]</a></td>
-			<td><a
-				href="/phonebook3/pbc?action=pupdate&no=<%=personList.get(i).getPersonId()%>&name=<%=personList.get(i).getName()%> &ph=<%=personList.get(i).getPh()%>&company=<%=personList.get(i).getCompany()%>">[수정]</a></td>
-		</tr>
-	</table>
-
-}}
-	%>
--->
+	
 </body>
 </html>
